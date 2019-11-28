@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: django
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: django-web
-          image: gitumarkk/k8_django_minikube:part_2
+          image: xiez/k8_django_minikube:1.0.0
           ports:
             - containerPort: 8000
