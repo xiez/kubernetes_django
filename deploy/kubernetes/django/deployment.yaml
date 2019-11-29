@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: django
   labels:
-    deployment: django
+    app: django
 spec:
   replicas: 1
   selector:
     matchLabels:
-      pod: django
+      app: django-container
   template:
     metadata:
       labels:
-        pod: django
+        app: django-container
     spec:
       containers:
         - name: django
