@@ -2,11 +2,13 @@ kind: Service
 apiVersion: v1
 metadata:
   name: django-service
+  annotations:
+    prometheus.io/scrape: "true"
 spec:
   selector:
     app: django-container
   ports:
   - protocol: TCP
-    port: 8000
+    port: 80
     targetPort: 8000
-  type: NodePort
+  type: LoadBalancer

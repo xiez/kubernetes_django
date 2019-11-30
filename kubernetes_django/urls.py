@@ -19,6 +19,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # Creating the health check endpoint
+    path(r'', include('django_prometheus.urls')),
+
+    # # Creating the health check endpoint
     path(r'', include('health_check.urls')),
 ]
